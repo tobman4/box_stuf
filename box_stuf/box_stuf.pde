@@ -1,3 +1,5 @@
+import static javax.swing.JOptionPane.*;
+
 int colums,rows;
 float size = 50;
 float[] offset;
@@ -48,8 +50,7 @@ void settings() {
 }
 
 void setup() {
-
-  
+  showMessageDialog(null,"change setting is ./data/settings.config");
   rows = round(height/size);
   colums = round(width/size);
   println("Size: " + size);
