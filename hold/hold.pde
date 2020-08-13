@@ -1,4 +1,4 @@
-Ball[] balls;
+ Ball[] balls;
 
 void setup() {
   //size(600,600,P2D);
@@ -49,9 +49,5 @@ void draw() {
   }
   updatePixels();
   println(updates + "/" + pixels.length);
-  /*if(frameCount % 600 == 0) {
-    exit();
-  } else {
-    saveFrame("/out/###.tga");
-  }*/ 
+
 }
