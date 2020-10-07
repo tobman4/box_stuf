@@ -1,11 +1,18 @@
 class Ball {
-  int range = 250;
+  int range = 300;
   PVector pos = new PVector(width/2,height/2);
   PVector vel = new PVector(0,0);
   
+  boolean mouse_mode = false;
+  
   Ball() {
-    vel.x = random(-5,5);
-    vel.y = random(-5,5);
+    if(!DBG) {
+      vel.x = random(-5,5);
+      vel.y = random(-5,5);
+    } else {
+      vel.x = 0;
+      vel.y = 0;
+    }
   }
   
   void render() {
@@ -18,6 +25,12 @@ class Ball {
   }
   
   void step() {
+    
+    if(mouse_mode) {
+      pos.x = mouseX;
+      pos.y = mouseY;
+    }
+    
     if(pos.x+vel.x > width || pos.x+vel.x < 0) {
       vel.x = -vel.x;
     }
