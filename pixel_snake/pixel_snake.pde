@@ -13,6 +13,7 @@ boolean DBG = true;
 void setup() {
   //size(600,600);
   fullScreen();
+  pixelDensity(1);
   snake.add(new Point(width/2,height/2));
   //place_food();
   food = new Point(width/2+50,height/2);
@@ -24,7 +25,7 @@ void draw() {
   background(0);
   
   loadPixels();
-  
+  println(pixels.length);
   
   pixels[(width*food.Y)+food.X] = food_color;
   
