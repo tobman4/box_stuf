@@ -17,6 +17,11 @@ void draw() {
     for(Pin curr : pins) {
         curr.render();
     }
+    if(lifted != null) {
+        for(Pin curr : pins) {
+            curr.DBG = curr.doOverlap(lifted);
+        }
+    }
 }
 
 void mousePressed() {

@@ -6,10 +6,14 @@ class Pin extends Obj {
     }
 
     void render() {
-        fill(100);
+        if(DBG) {
+            fill(255,0,255);
+        } else {
+            fill(100);
+        }
         stroke(0);
         rect(pos.x,pos.y,size.x,size.y);
-
+        
         for(Hoop curr : hoops) {
             curr.render();
         }
